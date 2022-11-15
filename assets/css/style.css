@@ -21,6 +21,7 @@
 .col-4{
     background-color: whitesmoke;
     height: 90vh;
+    overflow: auto;
 }
 
 .col-8{
@@ -52,6 +53,7 @@
     color: rgba(142, 218, 252, 1);
 }
 
+
 .name{
     display: block;
 }
@@ -68,6 +70,23 @@
     /* z-index: 2; */
     height: 80vh;
 }
+
+.message{
+    width: 30%;
+    border-radius: 10px;
+    margin: 5px 50px; 
+}
+
+.white{
+    background-color: aliceblue;
+}
+
+.green{
+    background-color: rgba(213, 249, 186, 1); 
+    margin-left: auto;
+}
+
+
 
 
 

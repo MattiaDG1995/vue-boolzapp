@@ -1,6 +1,8 @@
 var app = new Vue({
     el:'#root',
     data: {
+    selectedUser: 0,
+
     contacts: [
         {
         name: 'Michele',
@@ -165,11 +167,11 @@ var app = new Vue({
         }
         ]},
 
-
         methods:{
 
-            chat(){
-                
+            chat(index){
+              this.selectedUser = index
+                console.log(index)            
             }
         }
 })

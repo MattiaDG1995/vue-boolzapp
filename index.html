@@ -44,10 +44,10 @@
                         </div>
                     </div>
 
-                    <div class="cardusers d-flex justify-content-between align-items-center p-2" v-for="( elem, index) in contacts" :key="index" @click="chat">
+                    <div class="cardusers d-flex justify-content-between align-items-center p-2" v-for="( elem, index ) in contacts" :key="index" @click="chat(index)">
                         <div class="usersleft d-flex">
                             <div class="headleft">
-                                <img class="imglogo mx-2" :src="elem.avatar" alt="">       
+                                <img class="imglogo mx-2" :src="elem.avatar" :alt="elem.name">       
                             </div>
                             <div>
                                 <span>{{elem.name}}</span>
@@ -67,10 +67,10 @@
                     <div class="cardusers d-flex justify-content-between align-items-center p-2 bg-grey">
                         <div class="usersleft d-flex">
                             <div class="headleft">
-                                <img class="imglogo mx-2" src="./assets/img/avatar_1.jpg" alt="">       
+                                <img class="imglogo mx-2" :src="contacts[selectedUser].avatar" :alt="contacts[selectedUser].name">       
                             </div>
                             <div>
-                                <span>Michele</span>
+                                <span>{{contacts[selectedUser].name}}</span>
                                 <span class="name">Ultimo messaggio oggi alle 12:30</span>
                             </div>
                         </div>
@@ -86,8 +86,11 @@
                     <div class="containerchat">
                         
 
-                        <div class="message d-flex" v-for="( elem, index ) in contacts[0].messages" :key="index" >
-                            <p>{{elem.message}}</p>
+                        <div class="messages d-flex" v-for="(message , index) in contacts[selectedUser].messages" :key="index" >
+                            <div class="message" :class="(message.status == 'received') ? 'white': 'green' ">
+                                <p class="p-2">{{message.message}}</p>
+                            </div>
+                            
                         </div>
 
                        
