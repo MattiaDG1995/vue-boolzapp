@@ -163,5 +163,13 @@ var app = new Vue({
         }
         ],
         }
-        ]}
+        ]},
+
+
+        methods:{
+
+            chat(){
+                
+            }
+        }
 })

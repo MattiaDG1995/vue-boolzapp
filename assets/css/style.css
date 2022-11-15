@@ -26,6 +26,7 @@
 .col-8{
     background-color: rgba(224, 216, 209, 1);
     height: 90vh;
+    /* z-index: 1; */
 }
 
 .cardheader{
@@ -61,6 +62,11 @@
 
 .bg-grey{
     background-color: rgba(234, 234, 234, 1);
+}
+
+.containerchat{
+    /* z-index: 2; */
+    height: 80vh;
 }
 
 
