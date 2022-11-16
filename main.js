@@ -3,6 +3,7 @@ var app = new Vue({
     data: {
     selectedUser: 0,
     inputText: '',
+    filter: '',
     contacts: [
         {
         name: 'Michele',
@@ -166,6 +167,17 @@ var app = new Vue({
         ],
         }
         ]},
+
+        beforeUpdate(){
+            this.contacts.forEach(( elem, i) => {
+                if(this.contacts[i].name.includes(this.filter)){
+                    this.contacts[i].visible == true;
+                }else{
+                    this.contacts[i].visible == false;
+                }
+
+            })
+        },
 
         methods:{
 

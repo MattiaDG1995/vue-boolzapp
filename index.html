@@ -40,11 +40,11 @@
                     <div class="cardsearch">
                         <div class="input-group p-2">
                             <span class="input-group-text bg-white border-0 rounded-0" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                            <input type="text" class="form-control border-0 rounded-0" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control border-0 rounded-0" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" v-model="filter">
                         </div>
                     </div>
 
-                    <div class="cardusers d-flex justify-content-between align-items-center p-2" v-for="( elem, index ) in contacts" :key="index" @click="chat(index)">
+                    <div class="cardusers d-flex justify-content-between align-items-center p-2" v-for="( elem, index ) in contacts" :key="index" @click="chat(index)" v-if="elem.visible == true">
                         <div class="usersleft d-flex">
                             <div class="headleft">
                                 <img class="imglogo mx-2" :src="elem.avatar" :alt="elem.name">       
