@@ -2,7 +2,7 @@ var app = new Vue({
     el:'#root',
     data: {
     selectedUser: 0,
-
+    inputText: '',
     contacts: [
         {
         name: 'Michele',
@@ -172,6 +172,43 @@ var app = new Vue({
             chat(index){
               this.selectedUser = index
                 console.log(index)            
+            },
+
+            generateMessage(){
+                let send = {
+                    date: '10/01/2020 15:50:00',
+                    message: 'ok',
+                    status: 'received'
+                }
+
+                this.contacts[this.selectedUser].messages.push(send)
+            },
+
+           
+
+            newText(){
+                
+                if( this.inputText !== ''){
+
+                    let send = {
+                        date: '10/01/2020 15:50:00',
+                        message: this.inputText,
+                        status: 'sent',
+                        
+                    }
+                    this.contacts[this.selectedUser].messages.push(send)
+                }
+
+                
+                  this.inputText= '';
+
+                  setTimeout(()=>
+                    {
+                        this.generateMessage();
+                    },1000
+                    
+                    );
             }
         }
+
 })
