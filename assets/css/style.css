@@ -45,12 +45,12 @@
 
 .bell{
     background-color: white;
-    border-radius: 50%;
+    border-radius: 50%; 
 }
 
 .fa-bell-slash{
     font-size: 20px;
-    color: rgba(142, 218, 252, 1);
+    color: rgba(142, 218, 252, 1) !important;
 }
 
 .cardusers:hover{
@@ -65,6 +65,10 @@
 
 .fa-solid{
     color: gray;
+}
+
+.fa-solid:hover{
+    color: rgb(71, 71, 71);
 }
 
 .bg-grey{
@@ -89,6 +93,10 @@
 .green{
     background-color: rgba(213, 249, 186, 1); 
     margin-left: auto;
+}
+
+.ora{
+    font-size: 10px;
 }
 
 

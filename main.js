@@ -171,12 +171,12 @@ var app = new Vue({
         beforeUpdate(){
             this.contacts.forEach(( elem, i) => {
                 if(this.contacts[i].name.includes(this.filter)){
-                    this.contacts[i].visible == true;
+                    this.contacts[i].visible = true;
                 }else{
-                    this.contacts[i].visible == false;
+                    this.contacts[i].visible = false;
                 }
 
-            })
+            });
         },
 
         methods:{
@@ -220,7 +220,31 @@ var app = new Vue({
                     },1000
                     
                     );
-            }
+            },
+
+            generateHourContact(elem){
+                let newDate = elem.messages[elem.messages.length-1].date
+                newDate = newDate(' ')
+
+                return newDate[1]
+            },
+
+            generateHourMessage(elem){
+                let date = elem;
+                date = date.split(' ')
+                return date[1];
+            },
+
+            /* test(){
+                let getMessages = this.contacts[this.selectedUser].messages
+                const d = new Date();
+                let time = d.toLocaleTimeString();
+                let date = d.toLocaleDateString();
+
+                let now =` ${date} ${time}`
+
+                
+            } */
         }
 
 })
